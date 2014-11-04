@@ -1,12 +1,16 @@
-#encoding=utf8
-#author:shellvon
+# encoding=utf8
+# author:shellvon
 """
 Greedy Algorithms
 Greedy Method:
-	Dijkstra’s Algorithm
-	Huffman's Coding
+    Dijkstra’s Algorithm
+    Huffman's Coding
 """
+
+
 def dijkstra():
-	pass
+    pass
+
+
 def huffmanCoding():
-	pass
+    pass

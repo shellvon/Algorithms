@@ -11,6 +11,8 @@
            - 推广应用[https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array/](https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
       + 深度优先
       + 广度优先
+      + 归并排序
+      + 插入排序
 * 排序算法([Implements with Python](https://github.com/shellvon/Algorithms/blob/master/Python/sort.py))
       + 选择排序
       + 冒泡排序
@@ -22,11 +24,11 @@
       + 字符串操作([Implements with C++]
 (https://github.com/shellvon/Algorithms/blob/master/C%2B%2B/Deli.cpp))
           - 来自BNU题目
+
 TODO
+
 ----
 * 排序算法
-      + 归并排序
-      + 插入排序
       + 快速排序
       + 希尔排序
       + 桶排序
