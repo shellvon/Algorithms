@@ -122,18 +122,49 @@ def insertionSort(seq):
 
 
 def quickSort(seq):
-    pass
+    """
+    See:http://en.wikipedia.org/wiki/Quicksort
+    Time Complexity: O(n*n) if worst case
+    Stable: No
+    Description:
+        Divide and Conquer!!!Same as mergeSort
+        1).Pick an element,call a pivot,from the seq.
+        2).Partition.
+        3).Recursively.
+    The pivot,there are many way to pick it:
+        1).Always pick first element[implemented below]
+        2).The last
+        3).Random
+        4).Median
+    The key process in the quickSort is `how to partition` 
+
+    More Details See:http://www.cnblogs.com/figure9/archive/2010/12/10/1902711.html
+    """
+    q_sort= lambda l: l if len(l)<=1 else q_sort([x for x in l[1:] if x<l[0]])+[l[0]]+q_sort([x for x in l[1:] if x>=l[0]])
+    return q_sort(seq)
 
 
 def heapSort(seq):
+    """
+    See:http://en.wikipedia.org/wiki/Heapsort
+    Time Complexity: O(nLogn)
+    Description:
+        make heap~
+    """
     pass
 
-
 def shellSort(seq):
+    """
+    See:http://en.wikipedia.org/wiki/Shell_sort
+    Time Complexity: O(n*n)
+    Stable: No
+    """
     pass
 
 
 def buckedSort(seq):
+    """
+    """
     pass
 
 if __name__ == '__main__':

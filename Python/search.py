@@ -66,6 +66,32 @@ def findMin(elements):
         return findMin(elements[mid:])
 
 
+def findMaxSub(elements):
+    """
+    Find The maximum sum in the subset
+    return the sum and start,end as bounds.
+    """
+    sub_sum, tmp_sum = elements[0], 0
+    bounds  = (0,0)
+    start = 0
+    for i in xrange(len(elements)):
+        tmp_sum += elements[i]
+        if tmp_sum > sub_sum:
+            sub_sum = tmp_sum
+            bounds = (start,i)
+        else if tmp_sum < 0:
+            tmp_sum = 0
+            start += 1
+    return bounds, sub_sum
+
+
+def findMaze(grid):
+    """
+    visited maze
+    """
+    pass
+
+
 def dfs(graph, start, path=[]):
     """
     See:https://en.wikipedia.org/wiki/Depth-first_search
@@ -81,14 +107,14 @@ def dfs(graph, start, path=[]):
     return path
 
 
-def bfs():
+def bfs(graph, start):
     """
     See:https://en.wikipedia.org/wiki/Breadth-first_search
     Description:
         Breadth First Search~
     """
-    # queue...
-    pass
+    
+
 if __name__ == '__main__':
     l0 = range(1)
     l1 = range(10)
