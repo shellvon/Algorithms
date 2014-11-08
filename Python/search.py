@@ -20,7 +20,8 @@ def binarySearch(elements, key):
         It can be ignore half of the elements after one comparison.
         1) Compare x with the middle element.
         2) If x matches with middle element, we return the mid index.
-        3) Else if x is greater than the mid element, then x can only lie in right half subarray after the mid element.
+        3) Else if x is greater than the mid element, then x can only
+           lie in right half subarray after the mid element.
         So we find for right half.
         4) Else (x is smaller) find for the left half.
     You can use Recursive/Iterative to implement it.
@@ -49,7 +50,8 @@ def findMin(elements):
     See:https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array/
     Time Complexity:O(Logn)
     Description:
-        Find the minimum element in a sorted and rotated array use the binarySearch
+        Find the minimum element in a sorted and rotated array use the
+        binarySearch
         The solution assumes that all elements are distinct.
     """
     low, high = 0, len(elements)-1
@@ -72,14 +74,14 @@ def findMaxSub(elements):
     return the sum and start,end as bounds.
     """
     sub_sum, tmp_sum = elements[0], 0
-    bounds  = (0,0)
+    bounds = (0, 0)
     start = 0
     for i in xrange(len(elements)):
         tmp_sum += elements[i]
         if tmp_sum > sub_sum:
             sub_sum = tmp_sum
-            bounds = (start,i)
-        else if tmp_sum < 0:
+            bounds = (start, i)
+        elif tmp_sum < 0:
             tmp_sum = 0
             start += 1
     return bounds, sub_sum
@@ -112,8 +114,12 @@ def bfs(graph, start):
     See:https://en.wikipedia.org/wiki/Breadth-first_search
     Description:
         Breadth First Search~
+    Queue is import for this.
     """
-    
+    """
+    pass
+    """
+
 
 if __name__ == '__main__':
     l0 = range(1)

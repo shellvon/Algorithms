@@ -18,17 +18,17 @@ def selectionSort(seq):
     """
     See:https://en.wikipedia.org/wiki/Selection_sort
     Time Complexity: O(n*n)
-    Stable: Yes 
+    Stable: Yes
     Description:
         Sorts an array by repeatedly finding the minimum element from unsorted
         part and putting it at the beginning
     """
     for i in xrange(0, len(seq)):
         iMin = i
-        for j in xrange(i+1, len(seq)):
+        for j in xrange(i + 1, len(seq)):
             if seq[iMin] > seq[j]:
                 iMin = j
-        seq[i], seq[iMin] = seq[iMin], seq[i]    # if i == iMin,there are no needed to swap it!
+        seq[i], seq[iMin] = seq[iMin], seq[i]
     return seq
 
 
@@ -39,7 +39,7 @@ def bubbleSort(seq):
     Stable: Yes
     Description:
         The algorithm gets its name from the way smaller elements "bubble" to
-        the top of the list. 
+        the top of the list.
     Optimized:
         The above function always runs O(n^2) time even if the array is sorted.
         So,if the inner loop didn’t cause any swap then we can stop it~how do ?
@@ -47,11 +47,13 @@ def bubbleSort(seq):
     """
     for i in xrange(0, len(seq)):
         is_swap = False
-        for j in xrange(0, len(seq)-i-1):
-            if seq[j] > seq[j+1]:
-                seq[j], seq[j+1] = seq[j+1], seq[j]
+        for j in xrange(0, len(seq) - i - 1):
+            if seq[j] > seq[j + 1]:
+                seq[j], seq[j + 1] = seq[j + 1], seq[j]
                 is_swap = True
-        if not is_swap:    # if there are no two elements were swapped by the inner loop, then break the loop.that's the way to optimized!!haha ~~
+        if not is_swap:
+            # if there are no two elements were swapped by the inner loop,
+            # then break the loop.that's the way to optimized!!haha ~~
             break
     return seq
 
@@ -69,12 +71,14 @@ def merge(left, right):
         else:
             result_seq.append(right[j])
             j += 1
-    # Copy the remaining elements of left/right sequence, if there are have.
-    # You need to know why you should not use .append method. Instead,you can use:
-    # result_seq += lst or result_seq.extend
-    result_seq.extend(left[i:])  
+    # Copy the remaining elements of left/right sequence, If there are have.
+    # You need to know why you should not use .append method. Instead,
+    # you can use:
+    #       result_seq += lst or result_seq.extend
+    result_seq.extend(left[i:])
     result_seq.extend(right[j:])
     return result_seq
+
 
 def mergeSort(seq):
     """
@@ -88,8 +92,9 @@ def mergeSort(seq):
         3).mergeSort for second half.
         4).merge the two half.
     This's solution code are the C++ Style:
-        mid = start + (end - start)//2  # Step 1,in python,it same as (end+start)/2.
-                                        # but in C++,it can be avoid the overflow when end and start are too big.
+    (In Step 1 it same as (end+start)/2.but in C++,it can be avoid the
+     overflow when end and start are too big!)
+        mid = start + (end - start)//2  # Step 1
         mergeSort(seq,start,mid)        # Step 2
         mergeSort(seq,mid+1,end)        # Step 3
         merge(seq,start,mid,end)        # Step 4
@@ -109,15 +114,16 @@ def insertionSort(seq):
     Time Complexity: O(n*n)
     Stable: Yes
     Description:
-        Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands. 
+        Insertion sort is a simple sorting algorithm that works the way
+        we sort playing cards in our hands.
     """
     for i in xrange(1, len(seq)):
         key = seq[i]
         j = i - 1
         while j >= 0 and seq[j] > key:
-            seq[j+1] = seq[j]
+            seq[j + 1] = seq[j]
             j = j - 1
-        seq[j+1] = key
+        seq[j + 1] = key
     return seq
 
 
@@ -136,11 +142,14 @@ def quickSort(seq):
         2).The last
         3).Random
         4).Median
-    The key process in the quickSort is `how to partition` 
+    The key process in the quickSort is `how to partition`
 
-    More Details See:http://www.cnblogs.com/figure9/archive/2010/12/10/1902711.html
+    More Details See:
+        http://www.cnblogs.com/figure9/archive/2010/12/10/1902711.html
     """
-    q_sort= lambda l: l if len(l)<=1 else q_sort([x for x in l[1:] if x<l[0]])+[l[0]]+q_sort([x for x in l[1:] if x>=l[0]])
+    q_sort = lambda l: l if len(l) <= 1 else q_sort(
+        [x for x in l[1:] if x < l[0]]) + [l[0]] + q_sort(
+            [x for x in l[1:] if x >= l[0]])
     return q_sort(seq)
 
 
@@ -152,6 +161,7 @@ def heapSort(seq):
         make heap~
     """
     pass
+
 
 def shellSort(seq):
     """
